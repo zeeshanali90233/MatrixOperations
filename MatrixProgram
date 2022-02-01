@@ -1,0 +1,54 @@
+def MatrixMultiplier(MatrixA,MatrixB):
+    #result matrix
+    MatrixAintoB=[]
+    #For Iterations
+    for i in range(len(MatrixA)):
+        MatrixAintoB.append(list([]))
+        for j in range(len(MatrixA)):
+            total=0
+            for k in range(len(MatrixB)):
+                total+=MatrixA[i][k]* MatrixB[k][j]
+            MatrixAintoB[i].append(total)
+    return MatrixAintoB
+def MatrixSum(MatrixA,MatrixB):
+   
+    if (len(MatrixA)==len(MatrixB)) and (len(MatrixA[0])==len(MatrixB[0])):
+        #For Iterations
+        for i in range(len(MatrixA)):
+            for j in range(len(MatrixB)):
+                MatrixA[i][j]=MatrixA[i][j]+MatrixB[i][j]
+        return MatrixA 
+def MatrixSubstract(MatrixA,MatrixB):
+       
+    if (len(MatrixA)==len(MatrixB)) and (len(MatrixA[0])==len(MatrixB[0])):
+        #For Iterations
+        for i in range(len(MatrixA)):
+            for j in range(len(MatrixB)):
+                MatrixA[i][j]=MatrixA[i][j-MatrixB[i][j]
+        return MatrixA 
+MatrixA=[
+    [1,2,3],
+    [45,12,64],
+    [4,5,6]
+]
+MatrixB=[
+    [1,5,45],
+    [6,7,23],
+    [8,9,12]
+    
+]
+#Multiply
+for eachrow in MatrixMultiplier(MatrixA,MatrixB):
+    print(eachrow)
+#For Sum
+try:
+    for eachrow in MatrixSum(MatrixA,MatrixB):
+        print(eachrow)
+except:
+    pass
+#For Substract
+try:
+    for eachrow in MatrixSubstract(MatrixA,MatrixB):
+        print(eachrow)
+except:
+    pass
